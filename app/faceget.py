@@ -5,7 +5,7 @@ import os
 from time import ctime
 from random import randint
 
-class face():
+class faceClass():
     def __init__(self):
         baseDir = os.path.dirname(os.path.abspath(__name__));
         self.facesdir = os.path.join(baseDir,'app/static/faces','sanye');

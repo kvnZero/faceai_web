@@ -124,4 +124,4 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder"
 )
 
-MEDIA_ROOT = 'user_order/static/images/'
+MEDIA_ROOT = 'app/static/images'
