@@ -2,10 +2,14 @@
 import cv2
 import face_recognition
 import os
+from time import ctime
+from random import randint
 
 class face():
     def __init__(self):
-        self.path = "sanye" 
+        baseDir = os.path.dirname(os.path.abspath(__name__));
+        self.facesdir = os.path.join(baseDir,'app/static/faces','sanye');
+        self.path = self.facesdir
         self.total_image_name = []
         self.total_face_encoding = []
         self.loadface(self.path)
@@ -43,4 +47,5 @@ class face():
             for (top, right, bottom, left), face_encoding in zip(
                     face_locations, face_encodings):
                 testImg = frame[top:bottom,left:right]
-                cv2.imwrite('sanye/sanye_%s.jpg' % model_name, testImg,[int(cv2.IMWRITE_PNG_COMPRESSION), 0])
+                i = "%s_%s" % (ctime()[6:], randint(10000,99999))
+                cv2.imwrite('%s/%s_%i.jpg' % (self.facesdir, model_name,i), testImg,[int(cv2.IMWRITE_PNG_COMPRESSION), 0])
