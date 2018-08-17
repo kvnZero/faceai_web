@@ -19,7 +19,7 @@ from app.views import index, search, upload_ajax
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('search/',search),
     path('', index),
-    path('search/<search>',search),
     path('upload_ajax/', upload_ajax),
 ]

@@ -37,7 +37,7 @@ class faceClass():
                     break
         return isshe
 
-    def cutPhone(self, model_name,images_path):
+    def cutImage(self, model_name,images_path):
         filesname = os.listdir(images_path)
         for filed in filesname:
             filepath = images_path + "/" + filed

@@ -8,11 +8,12 @@ import os
 face = faceClass()
 
 def index(request):
-    images = Picture.objects.all().order_by('-id')[:20]
+    images = Picture.objects.all().order_by('-id')
     return render(request, "index.html", {'images':images})
 
-def search(request,search):
-    images = Picture.objects.filter(fromweibo__contains=search)
+def search(request):
+    search = request.GET['s']
+    images = Picture.objects.filter(title__contains=search)
     return render(request, "index.html", {'images':images,'search': search})
 
 def getimg(request,page):
